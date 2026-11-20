@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meal prep for beginners — Easy Recipes Daily</title>
+<meta name="description" content="Cook once, eat all week: a simple Sunday routine that saves time, money and weeknight stress — without eating the same thing every day.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--red:#451a03;--red2:#7c2d12;--acc:#ea580c;--acc-d:#c2410c;--acc-bg:#ffedd5;--bg:#fff7ed;--card:#fff;--text:#292524;--muted:#78716c;--border:#e7ddd3;--radius:14px;--shadow:0 1px 3px rgba(69,26,3,.08),0 4px 14px rgba(69,26,3,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+a{color:var(--acc-d)}
+header{background:var(--red);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.header-in{display:flex;align-items:center;gap:14px;padding:13px 16px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:1;min-width:220px}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;flex:none}
+.brand b{font-size:19px;letter-spacing:.2px}
+.brand b span{color:#fdba74}
+.brand small{display:block;font-size:11.5px;color:#fed7aa;font-weight:400}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{color:#ffedd5;text-decoration:none;font-size:14px;font-weight:600;padding:8px 11px;border-radius:8px}
+nav.main-nav a:hover{background:var(--red2);color:#fff}
+.hero{background:linear-gradient(135deg,var(--red) 0%,#7c2d12 60%,#9a3412 100%);color:#fff;padding:44px 0 40px}
+.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.2;max-width:760px}
+.hero h1 span{color:#fdba74}
+.hero p{color:#ffedd5;font-size:16px;max-width:720px;margin-top:12px}
+.hero .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero .badge{background:rgba(234,88,12,.2);border:1px solid rgba(253,186,116,.45);color:#fed7aa;font-size:13px;font-weight:600;border-radius:999px;padding:6px 13px}
+section{padding:34px 0 8px}
+section h2{font-size:24px;margin-bottom:6px}
+.section-sub{color:var(--muted);font-size:15px;max-width:760px;margin-bottom:20px}
+.calc-grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:860px){.calc-grid{grid-template-columns:1fr 1fr}.calc-grid .wide{grid-column:1 / -1}}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px;border-top:4px solid var(--acc)}
+.card h3{font-size:18px;margin-bottom:2px}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc-d)}
+.card .desc{font-size:14px;color:var(--muted);margin:6px 0 16px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.field label small{font-weight:400;color:var(--muted)}
+.field input,.field select{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;outline:none;background:#fff;color:var(--text)}
+.field input:focus,.field select:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(234,88,12,.18)}
+.field-row{display:grid;grid-template-columns:1fr;gap:0 12px}
+@media(min-width:560px){.field-row{grid-template-columns:1fr 1fr}}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--acc);color:#fff;border:0;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:800;min-height:46px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--acc-d)}
+.results{display:none;margin-top:16px}
+.results.show{display:block}
+.results h4{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:560px){.stat-grid{grid-template-columns:repeat(3,1fr)}}
+.stat{background:#fafaf9;border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.stat.hero{background:var(--acc-bg);border-color:#fed7aa}
+.stat .k{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-size:19px;font-weight:800;margin-top:3px;word-break:break-word}
+.stat.hero .v{color:#7c2d12}
+.stat.wide{grid-column:1 / -1}
+.verdict{margin-top:10px;border-radius:10px;padding:11px 14px;font-size:14px;font-weight:600}
+.verdict.ok{background:var(--acc-bg);color:#7c2d12}
+.verdict.warn{background:#fef9c3;color:#854d0e}
+.note{font-size:12.5px;color:var(--muted);margin-top:12px}
+.formula{font-size:13px;color:var(--muted);background:#fafaf9;border:1px dashed var(--border);border-radius:8px;padding:8px 11px;margin-top:12px}
+.table-wrap{overflow-x:auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th{background:var(--red);color:#fff;text-align:left;padding:11px 12px;font-size:13px}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:#fafaf9}
+.guide-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.guide-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.guide-grid{grid-template-columns:1fr 1fr 1fr}}
+.guide{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 18px;border-left:4px solid var(--acc)}
+.guide .g-tag{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--acc-d)}
+.guide h3{font-size:16.5px;margin:5px 0 7px}
+.guide p{font-size:14px;color:#44403c}
+.guide-link{margin-top:10px;font-size:14px;font-weight:700}
+.guide-link a{text-decoration:none}
+.guide-link a:hover{text-decoration:underline}
+.faq{max-width:820px}
+.faq-item{background:#fff;border-radius:12px;box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden}
+.faq-item button{width:100%;text-align:left;background:none;border:0;padding:16px 18px;font-size:15.5px;font-weight:700;font-family:inherit;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq-item button .chev{color:var(--acc-d);font-size:20px;flex:none}
+.faq-item .answer{display:none;padding:0 18px 16px;font-size:14.5px;color:#44403c}
+.faq-item.open .answer{display:block}
+.faq-item.open .chev{transform:rotate(45deg)}
+.about{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px}
+.about p{font-size:14.5px;color:#44403c;margin-bottom:10px}
+footer{background:var(--red);color:#d6b8a3;margin-top:44px;padding:30px 0 26px}
+footer .cols{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer h4{color:#fff;font-size:15px;margin-bottom:10px}
+footer p,footer a{font-size:13.5px;color:#d6b8a3;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+.copy{border-top:1px solid #7c2d12;margin-top:22px;padding-top:16px;font-size:12.5px;text-align:center}
+.article{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 24px;margin-top:28px}
+.article h1{font-size:28px;line-height:1.25;margin-bottom:10px}
+.article .lede{font-size:17px;color:#44403c;margin-bottom:18px}
+.article h2{font-size:21px;margin:26px 0 10px}
+.article h3{font-size:17px;margin:20px 0 8px}
+.article p{margin-bottom:12px;font-size:15.5px;color:#292524}
+.article ul,.article ol{margin:0 0 14px 22px;font-size:15.5px;color:#292524}
+.article li{margin-bottom:6px}
+.article table{min-width:0}
+.back-link{display:inline-block;margin-top:8px;font-weight:700;text-decoration:none}
+.list-out{margin:10px 0 0 20px;font-size:14.5px;color:#292524}
+.list-out li{margin-bottom:4px}
+</style>
+</head>
+<body>
+<header><div class="header-in">
+<a class="brand" href="https://easyrecipesdaily.github.io/"><span class="mark">E</span><span><b>Easy Recipes <span>Daily</span></b><small>Simple, tasty recipes for every day</small></span></a>
+<nav class="main-nav"><a href="https://easyrecipesdaily.github.io/#tools">Tools</a><a href="https://easyrecipesdaily.github.io/#conversions">Conversions</a><a href="https://easyrecipesdaily.github.io/#guides">Guides</a><a href="https://easyrecipesdaily.github.io/#faq">FAQ</a></nav>
+</div></header>
+<main class="wrap"><article class="article">
+<h1>Meal prep for beginners</h1>
+<p class="lede">Cook once, eat all week: a simple Sunday routine that saves time, money and weeknight stress — without eating the same thing every day.</p>
+<h2>What meal prep really is</h2>
+<p>Meal prep is not cooking seven identical boxes of plain chicken and rice. It is preparing a few versatile building blocks — a grain, a protein, a sauce and some vegetables — so that assembling dinner takes five minutes instead of forty.</p>
+<h2>The Sunday routine</h2>
+<ol>
+<li><strong>Plan (10 minutes).</strong> Choose 3 dinners for the week and check what you already have.</li>
+<li><strong>Shop once.</strong> Buy everything on one list, using our Meal Planner to build it.</li>
+<li><strong>Cook the bases (60–90 minutes).</strong> Cook a big pot of rice, roast a tray of vegetables, grill or bake the week's protein, and make one sauce.</li>
+<li><strong>Pack and label.</strong> Store everything in separate containers with the date. Keep components separate so nothing goes soggy.</li>
+</ol>
+<h2>What preps well — and what does not</h2>
+<table><thead><tr><th>Preps well</th><th>Does not prep well</th></tr></thead>
+<tbody>
+<tr><td>Rice, pasta, grains</td><td>Salad leaves (wilt)</td></tr>
+<tr><td>Roast chicken, beef, chickpeas</td><td>Fried food (goes soft)</td></tr>
+<tr><td>Roasted vegetables</td><td>Avocado (browns)</td></tr>
+<tr><td>Soups, stews, curries</td><td>Crisp toppings (add fresh)</td></tr>
+<tr><td>Sauces and dressings</td><td>Soft cheese in hot dishes</td></tr>
+</tbody></table>
+<h2>Mix and match, don't repeat</h2>
+<p>The same roast chicken becomes three different dinners: chicken and rice bowls on Monday, chicken wraps on Wednesday, and chicken soup on Friday. One batch of rice serves as a side, a stir-fry base and a fried-rice dinner. Variety comes from sauces and toppings, not from cooking five different meals.</p>
+<h2>Storage basics</h2>
+<p>Cool food within two hours of cooking, store it in shallow containers, and keep it in the fridge for 3–4 days or the freezer for up to 3 months. Label every container with the dish and the date. Reheat until steaming hot all the way through.</p>
+<h2>Start small</h2>
+<p>Your first week, prep just two dinners and one lunch. Once the routine feels easy, add a third dinner. The goal is less stress, not a perfect Instagram fridge.</p>
+<p><a class="back-link" href="https://easyrecipesdaily.github.io/">← Back to home</a></p>
+</article></main>
+<footer><div class="wrap"><div class="cols">
+<div><h4>Easy Recipes Daily</h4><p>Free kitchen tools and practical guides for everyday home cooks. Scale recipes, convert units, estimate calories and plan your week — no sign-up needed.</p></div>
+<div><h4>Guides</h4><ul>
+<li><a href="https://easyrecipesdaily.github.io/guides/10-easy-weeknight-dinners.html">10 easy weeknight dinners</a></li>
+<li><a href="https://easyrecipesdaily.github.io/guides/how-to-scale-any-recipe.html">How to scale any recipe</a></li>
+<li><a href="https://easyrecipesdaily.github.io/guides/essential-pantry-staples.html">Essential pantry staples</a></li>
+<li><a href="https://easyrecipesdaily.github.io/guides/meal-prep-for-beginners.html">Meal prep for beginners</a></li>
+</ul></div>
+<div><h4>About</h4><ul><li><a href="https://easyrecipesdaily.github.io/#about">About</a></li><li><a href="https://easyrecipesdaily.github.io/#faq">FAQ</a></li></ul></div>
+</div><div class="copy">© 2026 Easy Recipes Daily — Free informational content. Nutrition figures are estimates; always follow food safety guidance for your region.</div></div></footer>
+</body>
+</html>
